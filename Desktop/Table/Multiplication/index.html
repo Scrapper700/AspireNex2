@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multiplication Table</title>
+
+    <link rel="stylesheet" href="style.css"> 
+
+    <script>
+        function generateTable(){
+            var startNumber = parseInt(document.getElementById("startnumber").value);
+            var endNumber = parseInt(document.getElementById("endNumber").value);
+
+            var putdata = document.getElementById("display");
+
+            putdata.innerHTML = "";
+
+            for(var i = 1; i <= endNumber; i++){
+                putdata.innerHTML += "<span style='color: red;'>" + startNumber + " x " + i + " = " + (startNumber*i) + "</span><br>";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <center>
+        <h1>Multiplication Table Generator</h1>
+
+        Start Number: <input type="number" id="startnumber" /><br>
+        End Number: <input type="number" id="endNumber" /><br>
+        <button onclick="generateTable()">Generate Table</button>
+
+        <br><br>
+
+        <div id="display"></div>
+        
+    </center>
+</body>
+</html>
